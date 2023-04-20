@@ -1,0 +1,310 @@
+
+/* Base styles */
+* {
+    box-sizing: border-box;     /* wlicz ramki do szerokości  */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+    width: 70px;
+    border: 1px solid #007bff;
+    border-bottom: 0px;
+}
+
+section {
+    padding: 120px 0px;
+}
+
+.section-header {
+    margin-bottom: 75px;
+}
+
+.section-header h2 {
+    color: #333;
+    font-size: 1.9em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;               /* grubość fontu; 400 to regular */
+}
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333; 
+    border: 1px solid #007bff;
+    padding: 14px 20px;
+    transition: all .3s;            /* wizualizacja: zmiana wyglądu */
+    display: inline-block;
+    margin: auto;
+    background-color: transparent;  /* chodzi o usunięcie domyślnego tła z btt WYŚLIJ */
+    cursor: pointer;
+}
+
+.btn:hover {                        /* zmiana wyglądu po najechaniu na btt */
+    color: #fff;            
+    background-color: #007bff;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+/* Header styles */
+.main-header {
+    height: 70vh;
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;           /*wyśrodkowanie w pionie */
+    justify-content: center;       /*wyśrodkowanie w poziomie */
+}
+
+.main-header .main-header-content {
+    text-align: center;            /*wyśrodkowanie tekstu */        
+}
+
+.main-header .main-header-content h1 {
+    font-size: 4em;
+    color: #007bff;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.main-header .main-header-content p {
+    color: #333; 
+    font-size: 1.3em;
+    margin: 40px 0px;
+}
+
+.main-header .main-header-content p span {
+    color: #007bff;
+}
+
+
+/* Main menu styles */
+.main-menu {
+    background-color: #007bff;
+}
+
+#drop-nav {
+    display: none;
+}
+
+label[for="drop-nav"] {
+    display: none;
+}
+
+.main-menu ul {
+    margin: 0;
+    padding: 10px 0px;
+    text-align: center;         /* wyśrodkowanie tekstu; działa z kombinacją [display: inline-block]*/ 
+}
+
+.main-menu ul .menu-item {
+    display: inline-block;      /* wyświetlanie liniowo-blokowe, by móc swobodnie formatować tekst  */ 
+    margin: 0px 10px;           /* góra-dół; lewy-prawy */ 
+}
+
+.main-menu ul .menu-item a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 20px;         /* odstępy: góra-dół; lewy-prawy; rozepchanie na wysokość */ 
+    display: block;             /* konieczna zmiana na [block], aby zadziałaly padding'i */ 
+    transition: all .3s;        /* efekty po hover */ 
+}
+
+.main-menu ul .menu-item a:hover {
+    color: #007bff;
+    background-color: #fff;
+}
+
+/* ABOUT section styles */
+.about {
+    text-align: center;
+}
+
+.about .about-img{
+    border-radius: 50%;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 40px auto 30px auto;    /* górny prawy dolny lewy  */
+    color:#777;
+}
+
+/* PROTFOLIO section styles */
+
+.portfolio {
+    background-color: #f2f1ed;
+}
+
+.portfolio-wrapper {
+    display: flex;
+    flex-wrap: wrap;                /* niech się zawija  */
+}
+
+.portfolio-wrapper .portfolio-item {
+    flex-basis:  25%;               /* 25% bo chcemy mieć 4 kolumny */
+    height:  200px;
+    position: relative;
+}
+
+.portfolio-wrapper .portfolio-item img {
+    width: 100%;                    /* dostosują się do szer. kolumn = 25%  */
+    height: 100%;
+    object-fit: cover;               /* img wypełnia proporcjonalnie obszar 25% a nadmiar obcina   */
+}
+
+    /* OBRAZEK + OPIS NA OBRAZKU: tj. nałożenie nagłówków <h3> na elementy obrazkowe  
+        - position: relative;
+        - oraz stylowanie <h3>
+    */
+
+.portfolio-wrapper .portfolio-item h3 {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,123,255,0.8);
+    margin: 0;
+    text-align: center;             /* środkowanie w poziomie */
+    line-height: 200px;             /* środkowanie w pionie = height [.portfolio-wrapper .portfolio-item] */
+    color: #fff;
+    font-weight: 300;
+    font-size: 3em;
+    opacity: 0;                     /* ukrycie elementu, który uaktywniamy po hoverze tj. po najechaniu myszką 
+                                       czyli jest ale całkowicie przezroczysty */
+    transition: all 0.3s;
+}
+
+.portfolio-wrapper .portfolio-item h3:hover {
+    opacity: 1;
+}
+
+
+/* CONTACT section styles */
+
+.contact form {
+    max-width: 700px;
+    margin: 40px auto 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact input[type="text"], 
+.contact input[type="email"] { 
+    flex-basis: 48%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.contact textarea { 
+    flex-basis: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    height: 100px;
+}
+
+
+.social-links {
+    margin-top: 75px;
+    text-align: center;
+}
+
+.social-links .social-link {
+    font-size: 2.5em;        
+    color: #007bff;
+    transition: all .3s;
+    display: inline-block;
+    margin: 0px 18px;
+}
+
+.social-links .social-link:hover {
+    color: #777;
+}
+
+
+/* FOOTER section styles */
+.main-footer {
+    background-color: #f2f1ed;
+    padding: 30px;
+    text-align: center;
+    color: #777;
+}
+
+
+/* RESPONSIVE section styles */
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 992px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 768px;
+    }  
+    .portfolio-wrapper .portfolio-item {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }  
+    .portfolio-wrapper .portfolio-item {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .main-header-content h1 {
+        font-size: 3em;
+    }
+    .about .about-img {
+        max-height: 200px;
+        max-width: 200px;
+    }
+    .contact input[type="text"], 
+    .contact input[type="email"] { 
+        flex-basis: 100%;
+    }
+
+    label[for="drop-nav"] {
+        display: block;
+        padding: 14px 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        text-align: right;
+        cursor: pointer;
+    }
+
+    .main-menu ul {
+        display: none;
+    }
+
+    #drop-nav:checked + ul {
+        display: block;
+    }
+
+    .main-menu ul .main-item {
+        display: block;
+        text-align: right;
+        margin: 0;
+    }
+
+}
